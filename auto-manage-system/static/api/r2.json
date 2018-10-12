@@ -1,0 +1,31 @@
+[
+    {
+        "path": "/dashboard",
+        "component": "page/Dashboard",
+        "meta": {
+            "title": "系统首页"
+        }
+    },
+    {
+        "path": "/charts",
+        "component": "page/BaseCharts",
+        "meta": {
+            "title": "schart图表"
+        }
+    },
+    {
+        "path": "/drag",
+        "component": "page/DragList",
+        "meta": {
+            "title": "拖拽列表"
+        }
+    },
+    {
+        "path": "/permission",
+        "component": "page/Permission",
+        "meta": {
+            "title": "权限测试",
+            "permission": true
+        }
+    }
+]

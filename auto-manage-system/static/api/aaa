@@ -1,0 +1,27 @@
+
+     "/dashboard", "page/Dashboard", "系统首页"
+
+     "/icon", "page/Icon", "自定义图标"
+
+     "/table", "page/BaseTable", "基础表格"
+
+     "/tabs", "page/Tabs", "tab选项卡"
+
+     "/form", "page/BaseForm", "基本表单"
+
+     "/editor", "page/VueEditor", "富文本编辑器"
+
+     "/markdown", "page/Markdown", "markdown编辑器"
+
+     "/upload", "page/Upload", "文件上传"
+
+     "/charts", "page/BaseCharts", "schart图表"
+
+     "/drag", "page/DragList", "拖拽列表"
+
+     "/permission", "page/Permission", "权限测试",
+
+
+     "/404", "page/404", "404"
+
+     "/403", "page/403", "403"
