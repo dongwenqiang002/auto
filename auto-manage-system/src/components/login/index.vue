@@ -90,7 +90,7 @@
                     if (rotePath.children) this.setResolve(rotePath.children);
                     if (rotePath.component) {
                         let rr = rotePath.component;
-                        rotePath.component = resolve => require([`./../${rr}.vue`], resolve);
+                        rotePath.component = resolve => require([`./../${rr}`], resolve);
                     }
                 });
                 return route;

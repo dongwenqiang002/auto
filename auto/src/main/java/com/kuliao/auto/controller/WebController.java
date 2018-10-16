@@ -1,5 +1,8 @@
 package com.kuliao.auto.controller;
 
+import com.kuliao.auto.db.model.Menu;
+import com.kuliao.auto.domain.NavMenu;
+import com.kuliao.auto.domain.Objs;
 import com.kuliao.auto.service.MenuService;
 import com.kuliao.auto.service.RouterService;
 import org.slf4j.Logger;
@@ -7,15 +10,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpResponse;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.reactive.function.server.ServerResponse;
-import reactor.core.publisher.Flux;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 import java.time.Duration;
+import java.util.Arrays;
 
 /**
  * @author 董文强
@@ -37,6 +36,24 @@ public class WebController {
     public Mono menu(String role) {
         if (role == null || role.isEmpty()) return Mono.error(new Exception("角色无"));
         return menuService.getMenu(role);
+    }
+
+    /**
+     * 改变菜单顺序和结构，菜单数据存储在menu的subs中
+     */
+    @PostMapping("/menu")
+    public Mono updateMenus(@RequestBody Objs<NavMenu> menu) {
+        LOGGER.info(Arrays.toString(menu.getData().toArray()));
+        return  menuService.updateMenu(menu.getData());
+    }
+
+    @PostMapping
+    public Mono updateMenu(@RequestBody Menu menu){
+        return menuService.updateMenu(menu);
+    }
+    @GetMapping()
+    public Mono getMenu(@RequestParam("id") Integer id){
+        return menuService.getMenuInfo(id);
     }
 
     @GetMapping("/router")

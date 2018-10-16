@@ -1,6 +1,7 @@
 package com.kuliao.auto.db.model;
 
 public class Role {
+
     private Integer id;
 
     private String name;

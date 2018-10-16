@@ -8,3 +8,4 @@ spring:
         driver-class-name: com.mysql.jdbc.Driver
     jackson:
       default-property-inclusion: non_null
+logging.level.com.kuliao: debug

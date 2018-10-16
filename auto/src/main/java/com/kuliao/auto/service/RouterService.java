@@ -17,6 +17,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author 董文强
  * @version 1.0
  * @date 2018年10月11日
+ *
+ * 获取router,用于前端，让前端决定要加载哪些路径以及对应的VUE模块
  */
 @Service
 public class RouterService {

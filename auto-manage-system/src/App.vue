@@ -40,7 +40,7 @@
                         }
                     ]);
                     loading.close();
-                    this.$router.push('/');
+                   // this.$router.push('/');
                 });
             },
             setResolve(route) {
@@ -48,7 +48,7 @@
                     if (rotePath.children) this.setResolve(rotePath.children);
                     if (rotePath.component) {
                         let rr = rotePath.component;
-                        rotePath.component = resolve => require([`./components/${rr}.vue`], resolve);
+                        rotePath.component = resolve => require([`./components/${rr}`], resolve);
                     }
                 });
                 return route;

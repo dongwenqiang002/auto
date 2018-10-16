@@ -32,7 +32,6 @@
             }
             console.log('一次页面触发')
             console.log(this.currentTabComponent)
-            // console.log(this.$route);
         },
     }
 </script>
